@@ -6,7 +6,7 @@ fetch("conf.json").then(r =>r.json()).then(confData => {
   const upload = () => {
     return new Promise(()=>{
        try{
-          fetch("https://ws.cipiaceinfo.it/cache/set", {
+          fetch(confData.url + "set", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ fetch("conf.json").then(r =>r.json()).then(confData => {
   const download = () => {
     return new Promise((resolve,reject)=>{
       try{
-        fetch("https://ws.cipiaceinfo.it/cache/get", {
+        fetch(confData.url + "get", {
           method: "POST",
           headers: {
             'Content-Type': 'application/json',
@@ -45,7 +45,6 @@ fetch("conf.json").then(r =>r.json()).then(confData => {
     })   
  } 
 
- data["A"] = "B";
  upload();
  download().then(console.log);
 
