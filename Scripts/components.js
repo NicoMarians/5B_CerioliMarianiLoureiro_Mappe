@@ -1,6 +1,6 @@
-const createForm=(cuh)=>{
+const createForm=(elem)=>{
     let data;
-    let element=cuh;
+    let element=elem;
     let callback;
     return{
         setLabels: (labels) => { data = labels; },
