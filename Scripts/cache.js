@@ -36,7 +36,7 @@ const download = () => {
             key: confData.key
           })
         }).then(r => r.json())
-        .then(r => {resolve(r);})
+        .then(r => {return r;})
       }catch(error) {
         reject(error)
       }
