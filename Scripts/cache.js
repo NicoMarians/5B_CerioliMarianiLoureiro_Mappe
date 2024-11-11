@@ -1,5 +1,5 @@
-const upload = () => {
-  return new Promise(()=>{
+const upload = (data) => {
+  return new Promise((resolve)=>{
     fetch("conf.json").then(r => r.json()).then(confData => {
       try{
         fetch(confData.url + "set", {
@@ -13,7 +13,7 @@ const upload = () => {
             value: data
           })
         }).then(r => r.json())
-          .then(r => {console.log(r);})
+          .then(r => {resolve();})
       }
       catch(error){
         reject(error)
@@ -36,7 +36,7 @@ const download = () => {
             key: confData.key
           })
         }).then(r => r.json())
-        .then(data => {resolve(data);})
+        .then(data => {resolve(data.result);})
       }catch(error) {
         reject(error)
       }
