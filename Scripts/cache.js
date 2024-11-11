@@ -36,7 +36,7 @@ const download = () => {
             key: confData.key
           })
         }).then(r => r.json())
-        .then(r => {return r;})
+        .then(data => {resolve(data);})
       }catch(error) {
         reject(error)
       }
@@ -44,7 +44,4 @@ const download = () => {
   })   
 }
 
-let data = {"A":"B"};
-upload();
-
-download().then(console.log);
+export{upload,download};

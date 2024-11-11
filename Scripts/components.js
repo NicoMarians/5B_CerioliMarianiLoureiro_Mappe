@@ -16,3 +16,5 @@ const createForm=(elem)=>{
     };
 };
 
+export{createForm};
+

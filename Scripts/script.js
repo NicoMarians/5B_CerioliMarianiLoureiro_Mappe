@@ -1,3 +1,7 @@
+import{upload,download} from "./cache.js";
+import {getCoordinates} from "./functions.js";
+import {createForm} from "./components.js";
+
 let places = [
     {
        name: "Piazza del Duomo",
@@ -17,11 +21,12 @@ let places = [
     }
  ];
 
-places = download().then();
+download().then((data) => {places = data});
 
 const form = createForm (document.getElementById("form"));
-form.setLabels([["labels","text"]])
-form.setCallback(getCoordinates)
+form.setLabels([["Luogo","text"]]);
+form.setCallback(getCoordinates);
+form.render();
 
  let zoom = 12;
  let maxZoom = 19;
