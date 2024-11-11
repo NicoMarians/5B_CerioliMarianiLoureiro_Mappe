@@ -1,3 +1,5 @@
+import {places} from "./script.js";
+
 const createForm=(elem)=>{
     let data;
     let element=elem;
@@ -10,7 +12,7 @@ const createForm=(elem)=>{
             element.innerHTML += `<button type="button" id="invia"> Invia </button>`;  
             document.getElementById("invia").onclick = () => {
                 const result = data.map((name) => {return document.getElementById(name[0]).value});
-                callback(result);
+                places.push(callback(result));
             }
         },        
     };

@@ -2,7 +2,7 @@ import{upload,download} from "./cache.js";
 import {getCoordinates} from "./functions.js";
 import {createForm} from "./components.js";
 
-let places = [
+export let places = [
     {
        name: "Piazza del Duomo",
        coords: [45.4639102, 9.1906426]
