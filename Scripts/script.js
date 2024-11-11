@@ -19,6 +19,10 @@ let places = [
 
 places = download().then();
 
+const form = createForm (document.getElementById("form"));
+form.setLabels([["labels","text"]])
+form.setCallback(getCoordinates)
+
  let zoom = 12;
  let maxZoom = 19;
  let map = L.map('map').setView(places[0].coords, zoom);
